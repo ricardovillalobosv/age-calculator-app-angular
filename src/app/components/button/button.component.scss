@@ -1,0 +1,33 @@
+.btn {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%, 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: hsl(259, 100%, 65%);
+  transition: all 0.25s ease-in-out;
+
+  @media screen and (min-width: 768px) {
+    right: 0;
+    transform: translateY(50%);
+    width: 80px;
+    height: 80px;
+  }
+
+  &:hover {
+    background-color: hsl(0, 0%, 8%);
+  }
+
+  &:disabled {
+    background-color: hsl(260, 100%, 90%);
+
+    > * {
+      pointer-events: none;
+    }
+  }
+}

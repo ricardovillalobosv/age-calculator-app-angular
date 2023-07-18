@@ -1,1 +1,14 @@
-<p>input works!</p>
+<div class="input">
+  <label class="input__label" [class.has-error]="hasError" [for]="id">{{
+    label
+  }}</label>
+  <input
+    class="input__control"
+    [class.has-error]="hasError"
+    (input)="onInputChange($event)"
+    [type]="type"
+    [name]="id"
+    [id]="id"
+    [placeholder]="placeholder"
+  />
+</div>

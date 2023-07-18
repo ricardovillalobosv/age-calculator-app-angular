@@ -1,0 +1,10 @@
+.input-error {
+  font-size: 9px;
+  font-family: "Poppins-regular";
+  margin-top: 5px;
+  color: hsl(0, 100%, 67%);
+
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+  }
+}

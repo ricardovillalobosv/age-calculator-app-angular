@@ -1,0 +1,15 @@
+.result {
+  &__text {
+    font-size: 40px;
+    font-weight: 800;
+    font-family: 'Poppins-extra-bold-italic';
+
+    @media screen and (min-width: 768px)  {
+      font-size: 75px;
+    }
+
+    &.result {
+      color: hsl(259, 100%, 65%);
+    }
+  }
+}

@@ -1,1 +1,74 @@
-<p>age-calculator works!</p>
+<article class="age-calculator">
+  <form class="age-form relative" [formGroup]="ageCalculatorForm">
+    <div class="grid grid-cols-3 md:grid-cols-4 gap-1 md:gap-6">
+      <div class="col-span-1">
+        <app-input
+          label="DAY"
+          placeholder="DD"
+          id="day"
+          formControlName="day"
+          [hasError]="hasError('day')"
+        ></app-input>
+        <app-input-error
+          [show]="hasErrorRequired('day')"
+          message="This field is required"
+        ></app-input-error>
+        <app-input-error
+          [show]="hasErrorValidate('day')"
+          message="Must be a valid day"
+        ></app-input-error>
+        <app-input-error
+          [show]="invalidDate"
+          message="Must be a valid date"
+        ></app-input-error>
+      </div>
+
+      <div class="col-span-1">
+        <app-input
+          label="MONTH"
+          placeholder="MM"
+          id="month"
+          formControlName="month"
+          [hasError]="hasError('month')"
+        ></app-input>
+        <app-input-error
+          [show]="hasErrorRequired('month')"
+          message="This field is required"
+        ></app-input-error>
+        <app-input-error
+          [show]="hasErrorValidate('month')"
+          message="Must be a valid month"
+        ></app-input-error>
+      </div>
+
+      <div class="col-span-1">
+        <app-input
+          label="YEAR"
+          placeholder="YYYY"
+          id="year"
+          formControlName="year"
+          [hasError]="hasError('year')"
+        ></app-input>
+        <app-input-error
+          [show]="hasErrorRequired('year')"
+          message="This field is required"
+        ></app-input-error>
+        <app-input-error
+          [show]="hasErrorValidate('year')"
+          message="Must be a valid year"
+        ></app-input-error>
+      </div>
+
+      <app-button
+        (click)="calculate()"
+        [disabled]="ageCalculatorForm.invalid"
+      ></app-button>
+    </div>
+  </form>
+
+  <div class="age-result">
+    <app-result [result]="years" suffix="years"></app-result>
+    <app-result [result]="months" suffix="months"></app-result>
+    <app-result [result]="days" suffix="days"></app-result>
+  </div>
+</article>

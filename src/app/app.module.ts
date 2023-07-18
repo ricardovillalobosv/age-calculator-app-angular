@@ -7,6 +7,7 @@ import { InputErrorComponent } from './components/input-error/input-error.compon
 import { ButtonComponent } from './components/button/button.component';
 import { ResultComponent } from './components/result/result.component';
 import { AgeCalculatorComponent } from './age-calculator/age-calculator.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AgeCalculatorComponent } from './age-calculator/age-calculator.componen
     AgeCalculatorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
